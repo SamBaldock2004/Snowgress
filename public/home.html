@@ -1,0 +1,79 @@
+<!-- This is the students home page
+This allows them to see all tricks assigned to them  and upload evidence -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<!-- Loading all stylsheeting -->
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="assets/style.css" rel="stylesheet" type="text/css">
+	<link href="assets/sa-todo-style.css" rel="stylesheet" type="text/css">
+	<title>Snow-tracker</title>
+</head>
+<body>
+<script>
+	// Initial script before the page has even loaded:
+	//Checks web token is valid
+	if (decodeURIComponent(document.cookie).indexOf('auth_token=') < 0 && decodeURIComponent(document.cookie).indexOf('task_manager_auth_token=') < 0) {
+		window.location.href = "index.html"
+	}
+</script>
+<!-- Nav bar -->
+<div class="nav-bar" id="nav-bar">
+	<a href="home.html" class="active">Home</a>
+	<a href="profile.html">Profile</a>
+	<a href="about.html">About</a>
+	<a style="float: right;" id="btn-logout">Logout</a>
+</div>
+<div id="page-container" class="page">
+	<!-- Header -->
+	<div id="header">
+		<h2>Snowgress</h2>
+		<!-- Logo -->
+		<img src="assets/snowgress_text.png" alt="Snow-tracker logo" style="width:200px ; height:auto;" >
+		<p><i>Master all the tricks!</i></p>
+
+	</div>
+	<div id="instructions">
+		<p>
+			<strong>Try a trick, and conquer it!</strong>
+		</p>
+	</div>
+	<!-- Error messages -->
+	<div id="messages">
+		<p id="message-1"></p>
+		<p id="message-2"></p>
+		<p id="message-3"></p>
+	</div>
+
+	<!-- Where the tricks are sent to and rendered -->
+	<h3>Set Tricks:</h3>
+	<div class="w3-row">
+		<div class="w3-col w3-container w3-left" ></div>
+		<div class="w3-col w3-container w3-right" ></div>
+		<ul class="w3-ul w3-padding-16 w3-rest" id="todo-list" >
+
+		</ul>
+	</div>
+
+	<div  id="bottom-padding">
+		<div >
+	</div>
+	<div class="footer" id="footer">
+		<p>
+			Created by Samuel Baldock with handmade HTML, CSS and JS
+		</p>
+	</div>
+</div>
+<!-- Footer -->
+<div class="footer" id="footer">
+	<p>
+		Created by Samuel Baldock with handmade HTML, CSS and JS
+	</p>
+</div>
+<!-- Loading all the functions and scripts to use -->
+<script type="text/javascript" src="assets/client-util.js"></script>
+<script type="text/javascript" src="assets/client-app.js"></script>
+</body>
+</html>

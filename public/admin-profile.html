@@ -1,0 +1,81 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="assets/style.css" rel="stylesheet" type="text/css">
+	<link href="assets/w3.css" rel="stylesheet" type="text/css">
+	<link href="assets/sa-todo-style.css" rel="stylesheet" type="text/css">
+	<title>Edit your Snow-Tracker profile</title>
+</head>
+<body>
+<script>
+	// Initial script before the page has even loaded:
+	// Check if we're logged in with an auth_token Cookie from the server or our Cookie (doesn't check if token is valid/expired or not)
+	if (decodeURIComponent(document.cookie).indexOf('auth_token=') < 0 && decodeURIComponent(document.cookie).indexOf('task_manager_auth_token=') < 0) {
+		window.location.href = "index.html"
+	}
+</script>
+	<div class="nav-bar" id="nav-bar">
+		<a href="admin.html">Home</a>
+		<a href="admin-profile.html" class="active">Profile</a>
+		<a href="about.html">About</a>
+		<a style="float: right;" id="btn-logout">Logout</a>
+	</div>
+	<div class="w3-content" id="page-container" class="page">
+		<!-- required to centre everything -->
+
+		<div id="header">
+			<h2 >Snow-Tracker</h2>
+			<p><i>Learn all those tricks!</i></p>
+		</div>
+		<div id="intro">
+			<span></span>
+			<!-- <img src="assets/checklist-logo.png" alt="Checklist clipboard logo" class="w3-image w3-margin-top"> -->
+			<p>
+				<strong>Modify your Profile for Snow-Tracker</strong>
+			</p>
+			<div id="messages">
+				<p id="message-1"></p>
+				<p id="message-2"></p>
+				<p id="message-3"></p>
+			</div>
+		</div>
+		<div id="profile">
+			<div></div> <!-- left/right responsive padding -->
+			<div ></div>
+			<div>
+				<p>Update your Snow-Tracker by entering any new values below and clicking <b>Save</b> - you don't need to update them all. To remove your account click <b>Delete Profile</b>. To log yourself out of all sessions on all machines click <b>Logout All Sessions</b>.</p>
+
+				<form  id="profile-form">
+					<label for="name"><b>Name:</b></label>
+					<input type="text" name="name" id="name-field">
+					<label for="email"><b>Email Address:</b></label>
+					<input type="email" name="email" id="email-field" >
+					<label for="password"><b>Password:</b></label>
+					<input type="password" name="password"  placeholder="Type a new Password to change it">
+					<label for="age"><b>Age:</b></label>
+					<input type="number" name="age" id="age-field"  placeholder="Enter your Age (optional)">
+					<button id="btn-del-profile"  type="button">Delete Profile</button>
+					<button id="btn-logout-all"  type="button">Logout All Sessions</button>
+					<button type="submit">Save</button>
+				</form>
+
+			</div>
+		</div>
+
+		<div id="bottom-padding">
+			<div></div>
+		</div>
+		<div class="footer">
+			<p>
+				Created by Samuel Baldock with handmade HTML, CSS and JS
+			</p>
+		</div>
+	</div>
+<script type="text/javascript" src="assets/client-util.js"></script>
+<script type="text/javascript" src="assets/client-profile.js"></script>
+</body>
+</html>

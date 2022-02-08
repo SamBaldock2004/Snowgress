@@ -1,0 +1,67 @@
+<!-- Front end to allow the user to login
+Connected to the client-login js file -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Linking and using all the stylesheeting -->
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="assets/style.css" rel="stylesheet" type="text/css">
+	<link href="assets/w3.css" rel="stylesheet" type="text/css">
+	<link href="assets/sa-todo-style.css" rel="stylesheet" type="text/css">
+	<title>Snow-Tracker</title>
+</head>
+
+<body style="background-image: url('assets/mountain-background.jpg');">
+	<div id="page-container" class="page">
+		<!-- Navbar  -->
+		<div class="nav-bar" id="nav-bar">
+			<a href="about.html">About</a>
+		</div>
+		<!-- Login form -->
+		<div class="login-box" id="login">
+				<form class="login-form" id="login-form">
+					<div id="header">
+						<img src="assets/snow-tracker-logo.png" alt="Snow-tracker logo" style="width:200px ; height:auto;" >
+						<p>Learn all those tricks
+						</p>
+					</div>
+					<p>
+						<strong>Login to Snow-Tracker</strong>
+					</p>
+					<!-- All login inputs -->
+					<label for="email" class="login-label"><b>Email Address:</b></label>
+					<input type="email" name="email" id="email-field"  class="login-input" placeholder="Enter Email Address" value="" required><br>
+					<label for="password" class="login-label"><b>Password:<span style="color:white;">___</span></b></label>
+					<input type="password" name="password" class="login-input" placeholder="Enter Password" required><br>
+					<input name="remember" id="remember-checkbox" type="checkbox"> Remember me
+					<br><button type="submit">Login</button>
+					<p>If you don't yet have an account: <br><a href="register.html">Register here</a></p>
+					<div id="intro">
+						<span></span>
+						<!-- To display error messages -->
+						<div id="messages">
+							<p id="message-1"></p>
+							<p id="message-2"></p>
+							<p id="message-3"></p>
+						</div>
+					</div>
+				</form>
+		</div>
+
+		<div id="bottom-padding">
+			<div ></div>
+		</div>
+		<div class="footer">
+			<p>
+				Created by Samuel Baldock with handmade HTML, CSS and JS
+			</p>
+		</div>
+	</div>
+	<!-- Connecting to the javascript files that are used -->
+<script type="text/javascript" src="assets/client-util.js"></script>
+<script type="text/javascript" src="assets/client-login.js"></script>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!-- Allows instructor to set tricks to multiple students
+All students are listed then chosen -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<!-- Loading all stylesheeting -->
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="assets/style.css" rel="stylesheet" type="text/css">
+	<link href="assets/sa-todo-style.css" rel="stylesheet" type="text/css">
+	<title>Snow-tracker</title>
+</head>
+<body>
+<script>
+	// Initial script before the page has even loaded:
+	// Check if webtoken is valid
+	if (decodeURIComponent(document.cookie).indexOf('auth_token=') < 0 && decodeURIComponent(document.cookie).indexOf('task_manager_auth_token=') < 0) {
+		window.location.href = "index.html"
+	}
+</script>
+<!-- Navbar -->
+<div class="nav-bar" id="nav-bar">
+	<a href="admin.html">Home</a>
+	<a href="admin-profile.html">Profile</a>
+	<a href="leaderboard.html">Leaderboard</a>
+	<a href="authorize.html">Authorize</a>
+	<a href="tricks.html" class="active">Tricks</a>
+	<a href="about-admin.html">About</a>
+	<a style="float: right;" id="btn-logout">Logout</a>
+</div>
+<div id="page-container" class="page">
+	<!-- Header, logo and slogan -->
+	<div id="header">
+		<h2>Snow-Tracker</h2>
+		<img src="assets/snow-tracker-logo.png" alt="Snow-tracker logo" style="width:200px ; height:auto;" >
+		<p><i>Master all the tricks!</i></p>
+		<!-- Error messages -->
+    <div id="messages">
+        <p id="message-1"></p>
+		<p id="message-2"></p>
+		<p id="message-3"></p>
+	</div>
+	<div>
+		<!-- Shows trick being set -->
+		<h3>The Trick you are setting is:  </h3><h3 id="trick-name"></h3>
+	</div>
+
+	<h4>Students:</h4>
+	<!-- Student list -->
+	<div class="w3-row">
+        <div class="w3-col w3-container w3-left" ></div>
+        <div class="w3-col w3-container w3-right" ></div>
+        <ul class="w3-ul w3-padding-16 w3-rest" id="user-list" >
+        </ul>
+    </div>
+	<!-- footer -->
+	<div  id="bottom-padding">
+		<div >
+	</div>
+	<div class="footer" id="footer">
+		<p>
+			Created by Samuel Baldock with handmade HTML, CSS and JS
+		</p>
+	</div>
+</div>
+<!-- Linking and using the relevent js files -->
+<script type="text/javascript" src="assets/client-util.js"></script>
+<script type="text/javascript" src="assets/admin-set-trick.js"></script>
+</body>
+</html>

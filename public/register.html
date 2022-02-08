@@ -1,0 +1,80 @@
+<!-- The front end for the register function
+Allows user to input their information to be input into the function -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<!-- Using all my stylesheeting -->
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="assets/style.css" rel="stylesheet" type="text/css">
+	<link href="assets/w3.css" rel="stylesheet" type="text/css">
+	<link href="assets/sa-todo-style.css" rel="stylesheet" type="text/css">
+	<title>Snow-Tracker</title>
+</head>
+
+
+<body style="background-image: url('assets/mountain-background.jpg');">
+	<div id="page-container" class="page">
+		<!-- Nav Bar -->
+		<div class="nav-bar" id="nav-bar">
+			<a href="about.html">About</a>
+		</div>
+		
+		<div class="login-box" id="register">
+				<!-- Creating for for register, connected through id -->
+				<form class="login-form" id="register-form">
+					<div id="header">
+						<img src="assets/snowgress_text.png" alt="Snow-tracker logo" style="width:200px ; height:auto;" >
+						<p>Learn all those tricks
+						</p>
+					</div>
+					<p>
+						<strong>Register for Snow-Tracker</strong>
+					</p>
+					<!-- All inputs for user creation -->
+					<label for="name" class="login-label"><b>*Name:<span style="color: white;">_______</span></b></label>
+					<input type="text" name="name" class="login-input" placeholder="Enter your Name" required><br>
+					<label for="email" class="login-label"><b>*Email Address:</b></label>
+					<input type="email" name="email" class="login-input" placeholder="Enter your Email Address" required><br>
+					<label for="password" class="login-label"><b>*Password:<span style="color: white;">____</span></b></label>
+					<input type="password" name="password" class="login-input" placeholder="Choose a Password" required><br>
+					<label for="age" class="login-label"><b>Age:<span style="color: white;">_________</span></b></label>
+					<input type="number" name="age" placeholder="Optionally enter your Age"><br>
+					<label for="admin" class="login-label"><b>Admin:<span style="color: white;">_________</span></b></label>
+					<input type="checkbox" name="admin" value="true"><br>
+					<label for="instructor" class="login-label"><b>instructor:<span style="color: white;">_________</span></b></label>
+					<select  name="instructor" placeholder="Choose your Instructor">
+						<option value="618e271542334d62e84ae14d">Sam</option>
+						<option value="6173e0dd86a0436628ecd5c1">None</option>
+					</select>
+					<p >*Required</p>
+					<button type="submit">Register</button>
+					<div id="intro">
+						<span></span>
+						<!-- For error messages -->
+						<div id="messages">
+							<p id="message-1"></p>
+							<p id="message-2"></p>
+							<p id="message-3"></p>
+						</div>
+					</div>
+				</form>
+		</div>
+
+		<div id="bottom-padding">
+			<div ></div>
+		</div>
+		<!-- Footer -->
+		<div class="footer">
+			<p>
+				Created by Samuel Baldock with handmade HTML, CSS and JS
+			</p>
+		</div>
+	</div>
+	<!-- Loading in the js scripts that correspond with this front end -->
+<script type="text/javascript" src="assets/client-util.js"></script>
+<script type="text/javascript" src="assets/client-register.js"></script>
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!-- Front end to allow instructor to view edit and send pre-saved tricks
+Lets him input a trick description and create a new trick -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<!-- Loading stylesheeting -->
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="assets/style.css" rel="stylesheet" type="text/css">
+	<link href="assets/sa-todo-style.css" rel="stylesheet" type="text/css">
+	<title>Snow-tracker</title>
+</head>
+<body>
+<script>
+	// Initial script before the page has even loaded:
+	// Check if web token is valid
+	if (decodeURIComponent(document.cookie).indexOf('auth_token=') < 0 && decodeURIComponent(document.cookie).indexOf('task_manager_auth_token=') < 0) {
+		window.location.href = "index.html"
+	}
+</script>
+<!-- Navbar -->
+<div class="nav-bar" id="nav-bar">
+	<a href="admin.html">Home</a>
+	<a href="admin-profile.html">Profile</a>
+	<a href="leaderboard.html">Leaderboard</a>
+	<a href="authorize.html">Authorize</a>
+	<a href="tricks.html" class="active">Tricks</a>
+	<a href="about-admin.html">About</a>
+	<a style="float: right;" id="btn-logout">Logout</a>
+</div>
+<div id="page-container" class="page">
+	<!-- Title, logo and slogan -->
+	<div id="header">
+		<h2>Trick creator</h2>
+		<img src="assets/snow-tracker-logo.png" alt="Snow-tracker logo" style="width:200px ; height:auto;" >
+		<p><i>Master all the tricks!</i></p>
+
+	</div>
+	<div id="instructions">
+		<p>
+			<strong>Create a trick and then send it to multiple students</strong>
+		</p>
+	</div>
+	<!-- Error messages if applicable -->
+	<div id="messages">
+		<p id="message-1"></p>
+		<p id="message-2"></p>
+		<p id="message-3"></p>
+	</div>
+
+	<h3>Tricks:</h3>
+	<!-- Input field -->
+    <form class="w3-container w3-center w3-padding-24" id="input-form">
+		<input type="text" id="input-field" class="trick-input" placeholder="Add a trick">
+		<button type="submit" class="add-button"><span></span></button>
+	</form>
+	<!-- Pre-saved Trick list -->
+	<div class="w3-row">
+		<div class="w3-col w3-container w3-left" ></div>
+		<div class="w3-col w3-container w3-right" ></div>
+		<ul class="w3-ul w3-padding-16 w3-rest" id="todo-list" >
+
+		</ul>
+	</div>
+<!-- Footer -->
+	<div  id="bottom-padding">
+		<div >
+	</div>
+	<div class="footer" id="footer">
+		<p>
+			Created by Samuel Baldock with handmade HTML, CSS and JS
+		</p>
+	</div>
+</div>
+
+<!-- Linking and using the relevent js files -->
+<script type="text/javascript" src="assets/client-util.js"></script>
+<script type="text/javascript" src="assets/admin-tricks.js"></script>
+</body>
+</html>

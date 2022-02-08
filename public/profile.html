@@ -1,0 +1,86 @@
+<!-- This html file is for the user profile page
+allows user to update their account or delete their account -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="assets/style.css" rel="stylesheet" type="text/css">
+	<link href="assets/w3.css" rel="stylesheet" type="text/css">
+	<link href="assets/sa-todo-style.css" rel="stylesheet" type="text/css">
+	<title>Edit your Snow-Tracker profile</title>
+</head>
+<body>
+<script>
+	// Initial script before the page has even loaded:
+	// Checks that web token is valid
+	if (decodeURIComponent(document.cookie).indexOf('auth_token=') < 0 && decodeURIComponent(document.cookie).indexOf('task_manager_auth_token=') < 0) {
+		window.location.href = "index.html"
+	}
+</script>
+	<!-- Navbar -->
+	<div class="nav-bar" id="nav-bar">
+		<a href="home.html">Home</a>
+		<a href="profile.html" class="active">Profile</a>
+		<a href="about.html">About</a>
+		<a style="float: right;" id="btn-logout">Logout</a>
+	</div>
+	<!-- Centering div -->
+	<div class="w3-content" id="page-container" class="page">
+	
+		<div id="header">
+			<h2 >Snow-Tracker</h2>
+			<p><i>Learn all those tricks!</i></p>
+		</div>
+		<div id="intro">
+			<span></span>
+			<!-- Logo and title -->
+			<img src="assets/snowgress_text.png" alt="Checklist clipboard logo" class="w3-image w3-margin-top">
+			<p>
+				<strong>Modify your Profile for Snowgress</strong>
+			</p>
+			<!-- Error messages if applicable -->
+			<div id="messages">
+				<p id="message-1"></p>
+				<p id="message-2"></p>
+				<p id="message-3"></p>
+			</div>
+		</div>
+		<div id="profile">
+			<div></div> 
+			<div ></div>
+			<div>
+				<p>Update your Snowgress account by entering any new values below and clicking <b>Save</b> - you don't need to update them all. To remove your account click <b>Delete Profile</b>. To log yourself out of all sessions on all machines click <b>Logout All Sessions</b>.</p>
+				<!-- All update fields, placeholders of current data will be rendered -->
+				<form  id="profile-form">
+					<label for="name"><b>Name:</b></label>
+					<input type="text" name="name" id="name-field">
+					<label for="email"><b>Email Address:</b></label>
+					<input type="email" name="email" id="email-field" >
+					<label for="password"><b>Password:</b></label>
+					<input type="password" name="password"  placeholder="Type a new Password to change it">
+					<label for="age"><b>Age:</b></label>
+					<input type="number" name="age" id="age-field"  placeholder="Enter your Age (optional)">
+					<button id="btn-del-profile"  type="button">Delete Profile</button>
+					<button type="submit">Save</button>
+				</form>
+
+			</div>
+		</div>
+		<!-- Footer -->
+		<div id="bottom-padding">
+			<div></div>
+		</div>
+		<div class="footer">
+			<p>
+				Created by Samuel Baldock with handmade HTML, CSS and JS
+			</p>
+		</div>
+	</div>
+<!-- Loading all scripts and fucntion for the profile -->
+<script type="text/javascript" src="assets/client-util.js"></script>
+<script type="text/javascript" src="assets/client-profile.js"></script>
+</body>
+</html>
